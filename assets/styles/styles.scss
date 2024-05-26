@@ -157,7 +157,7 @@ footer .footer-section p, footer .footer-section a {
 /* секция выпадающие списки начало */
 
 .ocean-container {
-    background: url('../img//sea-istanbul.jpg');
+    background: url('../img/sea-istanbul.jpg');
     position: relative;
     width: 100%;
     padding: 20px;
@@ -211,8 +211,12 @@ footer .footer-section p, footer .footer-section a {
 
 .ocean-form {
     display: flex;
+    flex-direction: row;
     float: left;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-left: 28%;
+    margin-top: 10%;
     background-color: #68686856; /* Прозрачный белый фон */
     border: 1px solid #ffffff; /* Белая рамка */
     border-radius: 10px; /* Округлые углы */
@@ -237,13 +241,24 @@ footer .footer-section p, footer .footer-section a {
     border: none;
     border-radius: 5px;
     color: white;
-    background-color: #68686856; /* Прозрачный белый фон */
+    background-color: #6868683f; /* Прозрачный белый фон */
+}
+
+/* Стиль для элементов select */
+.ocean-form select {
+    appearance: none; /* Удаление стандартного внешнего вида для select */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('../img/iconmonstr-location-1\ 1.png'); /* Путь к вашему изображению */
+    background-repeat: no-repeat;
+    background-position: right 5px center; /* Позиция изображения (можете настроить по своему усмотрению) */
+    border-radius: 5px; /* Округление углов */
 }
 
 .ocean-form-group select:hover,
 .ocean-form-group input:hover {
-    color: rgb(22, 22, 22);
-    background-color: #68686856; /* Прозрачный белый фон */
+    color: white;
+    background-color: #1b1b1ba8; /* Прозрачный белый фон */
 }
 
 .ocean-form-btn {
