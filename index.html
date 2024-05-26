@@ -20,10 +20,47 @@
         <a href="#">Contact</a>
       </nav>
       <div class="login-signup">
-        <a href="#">Login</a>
-        <a href="#">Sign Up</a>
+        <a href="#" id="login-btn">Login</a>
+        <a href="#" id="signup-btn">Sign Up</a>
       </div>
     </header>
+
+    <!-- Login Modal  -->
+    <div id="login-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="close-login">&times;</span>
+        <h2>Login</h2>
+        <form id="login-form">
+          <label for="login-email">Email:</label>
+          <input type="email" id="login-email" name="email" required>
+          <label for="login-password">Password:</label>
+          <input type="password" id="login-password" name="password" required>
+          <div class="forgot-password">
+            <a href="#" id="forgot-password-link">Forgot your password?</a>
+          </div>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div id="signup-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="close-signup">&times;</span>
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+          <label for="signup-email">Email:</label>
+          <input type="email" id="signup-email" name="email" required>
+          <label for="signup-password">Password:</label>
+          <input type="password" id="signup-password" name="password" required>
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+    </div>
+
+
+
+
 
     <div class="hero">
       <img src="assets/img/sea.png" alt="The Oceanside" />
@@ -35,7 +72,10 @@
         </p>
       </div>
     </div>
-<section search>
+
+
+    <!-- Search form -->
+
     <div class="search-form">
       <input type="text" placeholder="Location" />
       <input type="text" placeholder="Activity" />
@@ -43,9 +83,8 @@
       <input type="text" placeholder="Date / Duration" />
       <button onclick="search()">Search</button>
     </div>
-  </section>
 
-    <section></section>
+    
     <div class="highlights">
       <h2>Explore Our Highlights</h2>
       <div class="highlight-cards">
