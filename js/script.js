@@ -1,3 +1,7 @@
 function search() {
-    alert('Search functionality coming soon!');
+    const travelType = document.getElementById('travel-type').value;
+    const gender = document.getElementById('gender').value;
+
+    alert(`Searching for ${travelType} trips with a ${gender} guide.`);
 }
+
