@@ -246,5 +246,17 @@ footer .footer-section p, footer .footer-section a {
     background-color: #68686856; /* Прозрачный белый фон */
 }
 
+.ocean-form-btn {
+    color: white;
+    background-color: #68686856; /* Прозрачный белый фон */
+    border-radius: 5px;
+    border: 1px solid #ffffff59; /* Белая рамка */
+}
 
+.ocean-form-btn:hover {
+    color: rgb(22, 22, 22);
+    background-color: #5f5f5f56; /* Прозрачный белый фон */
+    border-radius: 5px;
+    border: 1px solid #ffffff; /* Белая рамка */
+}
 /* /* секция выпадающие списки конец */
