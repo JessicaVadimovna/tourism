@@ -343,7 +343,7 @@ footer .footer-section p, footer .footer-section a {
 
 /* секция выпадающие списки начало */
 .ocean-container {
-  background: url("../img//sea-istanbul.jpg");
+  background: url("../img/sea-istanbul.jpg");
   position: relative;
   width: 100%;
   padding: 20px;
@@ -397,8 +397,12 @@ footer .footer-section p, footer .footer-section a {
 
 .ocean-form {
   display: flex;
+  flex-direction: row;
   float: left;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin-left: 28%;
+  margin-top: 10%;
   background-color: rgba(104, 104, 104, 0.337254902); /* Прозрачный белый фон */
   border: 1px solid #ffffff; /* Белая рамка */
   border-radius: 10px; /* Округлые углы */
@@ -423,13 +427,38 @@ footer .footer-section p, footer .footer-section a {
   border: none;
   border-radius: 5px;
   color: white;
-  background-color: rgba(104, 104, 104, 0.337254902); /* Прозрачный белый фон */
+  background-color: rgba(104, 104, 104, 0.2470588235); /* Прозрачный белый фон */
+}
+
+/* Стиль для элементов select */
+.ocean-form select {
+  appearance: none; /* Удаление стандартного внешнего вида для select */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("../img/iconmonstr-location-1 1.png"); /* Путь к вашему изображению */
+  background-repeat: no-repeat;
+  background-position: right 5px center; /* Позиция изображения (можете настроить по своему усмотрению) */
+  border-radius: 5px; /* Округление углов */
 }
 
 .ocean-form-group select:hover,
 .ocean-form-group input:hover {
-  color: rgb(22, 22, 22);
+  color: white;
+  background-color: rgba(27, 27, 27, 0.6588235294); /* Прозрачный белый фон */
+}
+
+.ocean-form-btn {
+  color: white;
   background-color: rgba(104, 104, 104, 0.337254902); /* Прозрачный белый фон */
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.3490196078); /* Белая рамка */
+}
+
+.ocean-form-btn:hover {
+  color: rgb(22, 22, 22);
+  background-color: rgba(95, 95, 95, 0.337254902); /* Прозрачный белый фон */
+  border-radius: 5px;
+  border: 1px solid #ffffff; /* Белая рамка */
 }
 
 /* /* секция выпадающие списки конец */
