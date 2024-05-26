@@ -21,10 +21,34 @@ header {
   color: #333;
 }
 
+nav {
+  display: flex;
+  align-items: center;
+}
+
 nav a {
   margin: 0 15px;
   text-decoration: none;
   color: #333;
+  position: relative;
+}
+
+nav a:after {
+  content: "";
+  height: 2px;
+  background-color: #5bc0de;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  right: 0;
+  opacity: 0;
+  transform: translateY(2px);
+  transition: all 0.3s ease-in-out;
+}
+
+nav a:hover:after {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .login-signup {
@@ -105,17 +129,17 @@ nav a {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
-  padding-top: 60px;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
   background-color: #fefefe;
-  margin: 10% auto;
+  margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 40%;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 10px;
 }
 
 .close {
@@ -132,33 +156,73 @@ nav a {
   cursor: pointer;
 }
 
-.forgot-password {
+.modal h2 {
+  margin-top: 0;
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal form label {
   margin-top: 10px;
 }
 
-.create-account {
+.modal form input[type=email],
+.modal form input[type=password] {
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.modal form button {
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #5bc0de;
+  color: white;
+  cursor: pointer;
+}
+
+.modal .forgot-password {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.modal .forgot-password a {
+  text-decoration: none;
+  color: #5bc0de;
+}
+
+.modal .forgot-password a:hover {
+  text-decoration: underline;
+}
+
+.modal .remember-me {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.modal .remember-me input {
+  margin-right: 5px;
+}
+
+.modal .create-account {
   margin-top: 20px;
   text-align: center;
 }
 
-.create-account a {
-  color: #5bc0de;
+.modal .create-account a {
   text-decoration: none;
+  color: #5bc0de;
 }
 
-.remember-me {
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-}
-
-.remember-me input[type=checkbox] {
-  margin-right: 10px;
-}
-
-.remember-me label {
-  font-size: 14px;
-  color: #666;
+.modal .create-account a:hover {
+  text-decoration: underline;
 }
 
 button {
@@ -174,7 +238,6 @@ button {
   cursor: pointer;
   border-radius: 16px;
 }
-
 
 /*section trending 2024 start*/
 .trending2024 {
@@ -225,7 +288,6 @@ button {
 }
 
 /*section trending 2024 end*/
-
 .highlights {
   padding: 40px;
   background-color: #f7f7f7;
@@ -278,7 +340,6 @@ footer .footer-section p, footer .footer-section a {
   color: white;
   text-decoration: none;
 }
-
 
 /* секция выпадающие списки начало */
 .ocean-container {
@@ -371,10 +432,10 @@ footer .footer-section p, footer .footer-section a {
   background-color: rgba(104, 104, 104, 0.337254902); /* Прозрачный белый фон */
 }
 
-/* секция выпадающие списки конец */
-/*# sourceMappingURL=styles.css.map */
-
-
+/* /* секция выпадающие списки конец */
+body {
+  padding: 10px;
+}
 
 .carousel {
   position: relative;
@@ -442,5 +503,3 @@ footer .footer-section p, footer .footer-section a {
 .gallery li {
   display: inline-block;
 }/*# sourceMappingURL=styles.css.map */
-
-
