@@ -49,15 +49,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
 // Forgot Password Link
 var forgotPasswordLink = document.getElementById('forgot-password-link');
 forgotPasswordLink.addEventListener('click', function(event) {
-    event.preventDefault();
-    var email = prompt('Please enter your email address:');
-    if (email) {
-        alert('An email with instructions to reset your password has been sent to ' + email);
-    }
+  event.preventDefault();
+  var email = prompt('Please enter your email address:');
+  if (email) {
+    alert('An email with instructions to reset your password has been sent to ' + email);
+  }
+});
+
+// Create Account Link
+var createAccountLink = document.getElementById('create-account-link');
+createAccountLink.addEventListener('click', function(event) {
+  event.preventDefault();
+  // Show the signup modal
+  document.getElementById('signup-modal').style.display = 'block';
 });
 
 // Login Form
@@ -74,3 +81,24 @@ loginForm.addEventListener('submit', function(event) {
     
     }
 });
+
+
+// Remember Me Checkbox
+var rememberMeCheckbox = document.getElementById('remember-me');
+rememberMeCheckbox.addEventListener('change', function() {
+  if (this.checked) {
+    // Set a cookie to remember the user
+    setCookie('rememberMe', 'true', 30); // expires in 30 days
+  } else {
+    // Remove the cookie
+    setCookie('rememberMe', '', -1);
+  }
+});
+
+// Set Cookie function
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  var expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}

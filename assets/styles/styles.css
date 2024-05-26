@@ -164,10 +164,10 @@ footer .footer-section p, footer .footer-section a {
 
 .modal-content {
   background-color: #fefefe;
-  margin: 5% auto;
+  margin: 10% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 40%;
 }
 
 .close {
@@ -182,6 +182,35 @@ footer .footer-section p, footer .footer-section a {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.forgot-password {
+  margin-top: 10px;
+}
+
+.create-account {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.create-account a {
+  color: #5bc0de;
+  text-decoration: none;
+}
+
+.remember-me {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.remember-me input[type=checkbox] {
+  margin-right: 10px;
+}
+
+.remember-me label {
+  font-size: 14px;
+  color: #666;
 }
 
 button {
