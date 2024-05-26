@@ -25,23 +25,49 @@
       </div>
     </header>
 
-    <div class="hero">
-      <img src="assets/img/sea.png" alt="The Oceanside" />
-      <div class="hero-text">
-        <h1>The Oceanside</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula
-          faucibus felis.
-        </p>
+    <section class="ocean-container">
+      <div class="ocean-content">
+          <div class="ocean-title">
+              <h2>Откройте для себя Стамбул по-новому</h2>
+              <h1>Стамбул</h1>
+              <p id="ocean-carousel-text">Стамбул – это путешествие во времени, где каждый уголок скрывает свою собственную историю и магию.</p>
+              <div class="ocean-carousel-controls">
+                  <button class="ocean-carousel-btn" onclick="prevOceanText()">&#10094;</button>
+                  <button class="ocean-carousel-btn" onclick="nextOceanText()">&#10095;</button>
+              </div>
+          </div>
       </div>
+
+      <div class="weather-api">
+        <iframe src="https://api.wo-cloud.com/content/widget/?geoObjectKey=7356933&language=ru&region=UA&timeFormat=HH:mm&windUnit=mps&systemOfMeasurement=metric&temperatureUnit=celsius" name="CW2" scrolling="no" width="140" height="160" frameborder="0" style="border: 1px solid #10658E; border-radius: 15px;"></iframe>
     </div>
-<section search>
-    <div class="search-form">
-      <input type="text" placeholder="Location" />
-      <input type="text" placeholder="Activity" />
-      <input type="text" placeholder="Transportation" />
-      <input type="text" placeholder="Date / Duration" />
-      <button onclick="search()">Search</button>
+
+      <div class="ocean-form">
+        <div class="ocean-form-group">
+            <label for="ocean-location">Location</label>
+            <select id="ocean-location">
+                <option value="">Выбрать</option>
+                <option value="beach">Beach</option>
+                <option value="mountain">Mountain</option>
+            </select>
+        </div>
+        <div class="ocean-form-group">
+            <label for="ocean-activity">Activity</label>
+            <select id="ocean-activity">
+                <option value="">Выбрать</option>
+                <option value="surfing">Surfing</option>
+                <option value="hiking">Hiking</option>
+            </select>
+        </div>
+        <div class="ocean-form-group">
+            <label for="ocean-transportation">Transportation</label>
+            <select id="ocean-transportation">
+                <option value="">Выбрать</option>
+                <option value="car">Car</option>
+                <option value="bus">Bus</option>
+            </select>
+        </div>
+
     </div>
   </section>
 
