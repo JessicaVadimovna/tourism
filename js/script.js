@@ -1,10 +1,3 @@
-function search() {
-    const travelType = document.getElementById('travel-type').value;
-    const gender = document.getElementById('gender').value;
-
-    alert(`Searching for ${travelType} trips with a ${gender} guide.`);
-}
-
 //Header
 // Adding event listeners to show and hide the modals when buttons are clicked and when clicking outside the modal content
 
@@ -102,3 +95,30 @@ function setCookie(cname, cvalue, exdays) {
   var expires = "expires=" + d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
+
+
+
+const oceanTexts = [
+    "Стамбул – это мост между Востоком и Западом, где каждый камень, каждая улица – это страница истории, которая ждет своего исследователя.",
+    "Стамбул – это путешествие во времени, где каждый уголок скрывает свою собственную историю и магию.",
+    "Стамбул – это город, который охватывает вас своей невероятной энергией и заставляет вас влюбиться в него с первого взгляда."
+];
+
+let currentOceanIndex = 0;
+
+function updateOceanText() {
+    document.getElementById('ocean-carousel-text').textContent = oceanTexts[currentOceanIndex];
+}
+
+function prevOceanText() {
+    currentOceanIndex = (currentOceanIndex - 1 + oceanTexts.length) % oceanTexts.length;
+    updateOceanText();
+}
+
+function nextOceanText() {
+    currentOceanIndex = (currentOceanIndex + 1) % oceanTexts.length;
+    updateOceanText();
+}
+
+// Initialize with the first text
+updateOceanText();

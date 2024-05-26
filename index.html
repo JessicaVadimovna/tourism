@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Empire Travel</title>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
     <link rel="icon" type="image/png" href="assets/img/icon.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
@@ -15,14 +19,14 @@
     <header>
       <div class="logo">Empire</div>
       <nav>
-        <a href="#">Destination</a>
+        <a href="#">Location</a>
         <a href="#">Activities</a>
-        <a href="#">Specials</a>
+        <a href="#">Transportation</a>
         <a href="#">Contact</a>
       </nav>
       <div class="login-signup">
-        <a href="#" id="login-btn">Login</a>
-        <a href="#" id="signup-btn">Sign Up</a>
+        <a href="#" id="login-btn">Войти в личный кабинет</a>
+        <a href="#" id="signup-btn">Зарегистрироваться</a>
       </div>
     </header>
 
@@ -30,23 +34,23 @@
     <div id="login-modal" class="modal">
       <div class="modal-content">
         <span class="close" id="close-login">&times;</span>
-        <h2>Login</h2>
+        <h2>Войти в личный кабинет</h2>
         <form id="login-form">
-          <label for="login-email">Username or Email:</label>
+          <label for="login-email">Имя пользователя или Email:</label>
           <input type="email" id="login-email" name="email" required>
-          <label for="login-password">Password:</label>
+          <label for="login-password">Пароль:</label>
           <input type="password" id="login-password" name="password" required>
           <div class="remember-me">
             <input type="checkbox" id="remember-me" name="remember-me">
-            <label for="remember-me">Remember me</label>
+            <label for="remember-me">Запомнить меня</label>
           </div>
           <div class="forgot-password">
-            <a href="#" id="forgot-password-link">Forgot your password?</a>
+            <a href="#" id="forgot-password-link">Забыли пароль?</a>
           </div>
           <button type="submit">Login</button>
         </form>
         <div class="create-account">
-          <p>Don't have an account? <a href="#" id="create-account-link">Create account</a></p>
+          <p>Еще не зарегистрированы? <a href="#" id="create-account-link">Зарегистрироваться</a></p>
         </div>
       </div>
     </div>
@@ -55,43 +59,66 @@
     <div id="signup-modal" class="modal">
       <div class="modal-content">
         <span class="close" id="close-signup">&times;</span>
-        <h2>Sign Up</h2>
+        <h2>Зарегистрироваться</h2>
         <form id="signup-form">
           <label for="signup-email">Email:</label>
           <input type="email" id="signup-email" name="email" required>
-          <label for="signup-password">Password:</label>
+          <label for="signup-password">Пароль:</label>
           <input type="password" id="signup-password" name="password" required>
-          <button type="submit">Sign Up</button>
+          <button type="submit">Создать профиль</button>
         </form>
       </div>
     </div>
 
 
 
-
-    <div class="hero">
-      <img src="assets/img/sea.png" alt="The Oceanside" />
-      <div class="hero-text">
-        <h1>The Oceanside</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula
-          faucibus felis.
-        </p>
+    <section class="ocean-container">
+      <div class="ocean-content">
+          <div class="ocean-title">
+              <h2>Откройте для себя Стамбул по-новому</h2>
+              <h1>Стамбул</h1>
+              <p id="ocean-carousel-text">Стамбул – это путешествие во времени, где каждый уголок скрывает свою собственную историю и магию.</p>
+              <div class="ocean-carousel-controls">
+                  <button class="ocean-carousel-btn" onclick="prevOceanText()">&#10094;</button>
+                  <button class="ocean-carousel-btn" onclick="nextOceanText()">&#10095;</button>
+              </div>
+          </div>
       </div>
+
+      <div class="weather-api">
+        <iframe src="https://api.wo-cloud.com/content/widget/?geoObjectKey=7356933&language=ru&region=UA&timeFormat=HH:mm&windUnit=mps&systemOfMeasurement=metric&temperatureUnit=celsius" name="CW2" scrolling="no" width="140" height="160" frameborder="0" style="border: 1px solid #10658E; border-radius: 15px;"></iframe>
     </div>
 
+      <div class="ocean-form">
+        <div class="ocean-form-group">
+            <label for="ocean-location">Location</label>
+            <select id="ocean-location">
+                <option value="">Выбрать</option>
+                <option value="beach">Beach</option>
+                <option value="mountain">Mountain</option>
+            </select>
+        </div>
+        <div class="ocean-form-group">
+            <label for="ocean-activity">Activity</label>
+            <select id="ocean-activity">
+                <option value="">Выбрать</option>
+                <option value="surfing">Surfing</option>
+                <option value="hiking">Hiking</option>
+            </select>
+        </div>
+        <div class="ocean-form-group">
+            <label for="ocean-transportation">Transportation</label>
+            <select id="ocean-transportation">
+                <option value="">Выбрать</option>
+                <option value="car">Car</option>
+                <option value="bus">Bus</option>
+            </select>
+        </div>
 
-    <!-- Search form -->
-
-    <div class="search-form">
-      <input type="text" placeholder="Location" />
-      <input type="text" placeholder="Activity" />
-      <input type="text" placeholder="Transportation" />
-      <input type="text" placeholder="Date / Duration" />
-      <button onclick="search()">Search</button>
     </div>
+  </section>
 
-    
+    <section></section>
     <div class="highlights">
       <h2>Explore Our Highlights</h2>
       <div class="highlight-cards">

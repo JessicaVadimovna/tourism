@@ -105,61 +105,6 @@ nav a {
     cursor: pointer;
 }
 
-
-
-.highlights {
-    padding: 40px;
-    background-color: #f7f7f7;
-    text-align: center;
-}
-
-.highlights h2 {
-    margin-bottom: 20px;
-}
-
-.highlight-cards {
-    display: flex;
-    justify-content: space-around;
-}
-
-.card {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 30%;
-}
-
-.card img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.card h3 {
-    margin-top: 15px;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-}
-
-footer .footer-section {
-    width: 30%;
-}
-
-footer .footer-section h3 {
-    margin-bottom: 15px;
-}
-
-footer .footer-section p, footer .footer-section a {
-    color: white;
-    text-decoration: none;
-}
-
 .modal {
     display: none;
     position: fixed;
@@ -173,6 +118,8 @@ footer .footer-section p, footer .footer-section a {
     background-color: rgba(0, 0, 0, 0.4);
     padding-top: 60px;
 }
+
+
 
 .modal-content {
     background-color: #fefefe;
@@ -239,3 +186,155 @@ button {
     cursor: pointer;
     border-radius: 16px;
 }
+
+
+
+.highlights {
+    padding: 40px;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+.highlights h2 {
+    margin-bottom: 20px;
+}
+
+.highlight-cards {
+    display: flex;
+    justify-content: space-around;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 30%;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card h3 {
+    margin-top: 15px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .footer-section {
+    width: 30%;
+}
+
+footer .footer-section h3 {
+    margin-bottom: 15px;
+}
+
+footer .footer-section p, footer .footer-section a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+/* секция выпадающие списки начало */
+
+.ocean-container {
+    background: url('../img//sea-istanbul.jpg');
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    max-width: 1800px;
+    color: white;
+    border-radius: 30px;
+    overflow: hidden;
+    margin: auto;
+}
+
+.ocean-content {
+    float: left;
+}
+
+.weather-api {
+    float: right;
+}
+
+.ocean-title h2 {
+    font-weight: 300;
+}
+
+.ocean-title h1 {
+    font-size: 3em;
+    margin: 0.2em 0;
+}
+
+.ocean-title p {
+    font-size: 1.2em;
+    margin: 1em 0;
+}
+
+.ocean-carousel-controls {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.ocean-carousel-btn {
+    background: none;
+    border: 1px solid white;
+    color: white;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.ocean-carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.425);
+}
+
+.ocean-form {
+    display: flex;
+    float: left;
+    flex-wrap: wrap;
+    background-color: #68686856; /* Прозрачный белый фон */
+    border: 1px solid #ffffff; /* Белая рамка */
+    border-radius: 10px; /* Округлые углы */
+    padding: 20px; /* Внутренний отступ */
+}
+
+.ocean-form-group {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.ocean-form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.ocean-form-group select,
+.ocean-form-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #68686856; /* Прозрачный белый фон */
+}
+
+.ocean-form-group select:hover,
+.ocean-form-group input:hover {
+    color: rgb(22, 22, 22);
+    background-color: #68686856; /* Прозрачный белый фон */
+}
+
+
+/* /* секция выпадающие списки конец */
