@@ -5,43 +5,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Empire Travel</title>
     <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+    <link rel="icon" type="image/png" href="assets/img/icon.png" />
+    <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/styles/styles.css" />
+<<<<<<< Updated upstream
+=======
+    <script src="./js/script.js"></script>
+>>>>>>> Stashed changes
   </head>
   <body>
     <header>
       <div class="logo">Empire</div>
       <nav>
-        <a href="#">Destination</a>
+        <a href="#">Location</a>
         <a href="#">Activities</a>
-        <a href="#">Specials</a>
+        <a href="#">Transportation</a>
         <a href="#">Contact</a>
       </nav>
       <div class="login-signup">
-        <a href="#">Login</a>
-        <a href="#">Sign Up</a>
+        <a href="#" id="login-btn">Войти в личный кабинет</a>
+        <a href="#" id="signup-btn">Зарегистрироваться</a>
       </div>
     </header>
 
-    <div class="hero">
-      <img src="assets/img/sea.png" alt="The Oceanside" />
-      <div class="hero-text">
-        <h1>The Oceanside</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula
-          faucibus felis.
-        </p>
+    <!-- Login Modal  -->
+    <div id="login-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="close-login">&times;</span>
+        <h2>Войти в личный кабинет</h2>
+        <form id="login-form">
+          <label for="login-email">Имя пользователя или Email:</label>
+          <input type="email" id="login-email" name="email" required>
+          <label for="login-password">Пароль:</label>
+          <input type="password" id="login-password" name="password" required>
+          <div class="remember-me">
+            <input type="checkbox" id="remember-me" name="remember-me">
+            <label for="remember-me">Запомнить меня</label>
+          </div>
+          <div class="forgot-password">
+            <a href="#" id="forgot-password-link">Забыли пароль?</a>
+          </div>
+          <button type="submit">Login</button>
+        </form>
+        <div class="create-account">
+          <p>Еще не зарегистрированы? <a href="#" id="create-account-link">Зарегистрироваться</a></p>
+        </div>
       </div>
     </div>
-<section search>
-    <div class="search-form">
-      <input type="text" placeholder="Location" />
-      <input type="text" placeholder="Activity" />
-      <input type="text" placeholder="Transportation" />
-      <input type="text" placeholder="Date / Duration" />
-      <button onclick="search()">Search</button>
+
+    <!-- Sign Up Modal -->
+    <div id="signup-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="close-signup">&times;</span>
+        <h2>Зарегистрироваться</h2>
+        <form id="signup-form">
+          <label for="signup-email">Email:</label>
+          <input type="email" id="signup-email" name="email" required>
+          <label for="signup-password">Пароль:</label>
+          <input type="password" id="signup-password" name="password" required>
+          <button type="submit">Создать профиль</button>
+        </form>
+      </div>
+    </div>
+
+
+
+    <section class="ocean-container">
+      <div class="ocean-content">
+          <div class="ocean-title">
+              <h2>Откройте для себя Стамбул по-новому</h2>
+              <h1>Стамбул</h1>
+              <p id="ocean-carousel-text">Стамбул – это путешествие во времени, где каждый уголок скрывает свою собственную историю и магию.</p>
+              <div class="ocean-carousel-controls">
+                  <button class="ocean-carousel-btn" onclick="prevOceanText()">&#10094;</button>
+                  <button class="ocean-carousel-btn" onclick="nextOceanText()">&#10095;</button>
+              </div>
+          </div>
+      </div>
+
+      <div class="weather-api">
+        <iframe src="https://api.wo-cloud.com/content/widget/?geoObjectKey=7356933&language=ru&region=UA&timeFormat=HH:mm&windUnit=mps&systemOfMeasurement=metric&temperatureUnit=celsius" name="CW2" scrolling="no" width="140" height="160" frameborder="0" style="border: 1px solid #10658E; border-radius: 15px;"></iframe>
+    </div>
+
+      <div class="ocean-form">
+        <div class="ocean-form-group">
+            <label for="ocean-location">Location</label>
+            <select id="ocean-location">
+                <option value="">Выбрать</option>
+                <option value="beach">Beach</option>
+                <option value="mountain">Mountain</option>
+            </select>
+        </div>
+        <div class="ocean-form-group">
+            <label for="ocean-activity">Activity</label>
+            <select id="ocean-activity">
+                <option value="">Выбрать</option>
+                <option value="surfing">Surfing</option>
+                <option value="hiking">Hiking</option>
+            </select>
+        </div>
+        <div class="ocean-form-group">
+            <label for="ocean-transportation">Transportation</label>
+            <select id="ocean-transportation">
+                <option value="">Выбрать</option>
+                <option value="car">Car</option>
+                <option value="bus">Bus</option>
+            </select>
+        </div>
+
     </div>
   </section>
 <!-- section trending 2024 start -->
@@ -138,10 +215,43 @@
             vitae convallis arcu.
           </p>
         </div>
+     
+        </div>
       </div>
+ 
+       
+
     </div>
-  </section>
-  
+
+         <!-- Блок гиды -->
+      <section>
+          <div class="guide">
+            <h3>Наши профессиональные гиды</h3>
+            <p>Опытный гид действительно может сделать ваше путешествие более увлекательным и обогащающим.</p>
+            <p>Гиды, которые могут рассказать интересные факты о местах, их истории, культуре и традициях, способствуют более глубокому пониманию и вовлечению в путешествие.Путешествие с хорошим гидом может превратиться в незабываемый и познавательный опыт, открывающий новые горизонты и оставляющий яркие воспоминания.</p>
+            
+          </p>   
+          <div id="carousel" class="carousel">
+           <button class="arrow prev">⇦</button>
+           <div class="gallery">
+             <ul id="list">
+                <li>  <img src="./assets/img/Rectangle 43.png">               
+                   <!-- <div> Sara Jonson
+                  Languages: France, English, Italian
+                  Experience: 6 years
+                  Hi there, I'm Sara and I'll be your guide. Whether you're looking for information or need assistance, I'm here to help. Let me know what you're interested in or what you need, and I'll do my best to provide you with the best guidance possible. I hope you have a great experience and feel free to ask me any questions along the way.</div> -->
+                </li>
+               <li><img src="./assets/img/guide-2.png"></li>
+               <li><img src="./assets/img/guide-3.png"></li>
+               <li><img src="./assets/img/guide-5.jpg"></li>
+               <li><img src="./assets/img/guide-4.png"></li>
+               </ul>
+           </div>
+           <button class="arrow next">⇨</button>
+         </div>
+         </div>
+        </section>
+      
     <footer>
       <div class="footer-section">
         <h3>About Us</h3>
