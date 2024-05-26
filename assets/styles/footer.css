@@ -1,5 +1,7 @@
 .footer {
     box-sizing: border-box;
+    width: 100%;
+    gap: 1rem;
     display: grid;
     background-color: #f7f7f7;
     grid-template-rows: 3fr;
