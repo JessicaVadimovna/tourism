@@ -1,9 +1,8 @@
 .footer {
     box-sizing: border-box;
     width: 100%;
-    gap: 5rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     background-color: #f7f7f7;
 }
 
