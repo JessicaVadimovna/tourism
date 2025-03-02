@@ -5,279 +5,331 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Empire Travel</title>
     <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="icon" type="image/png" href="assets/img/icon.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/styles/footer.css" />
-    <link rel="stylesheet" href="./assets/styles/styles.css" />
-    
-
+    <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
     <header>
-      <div class="logo">Istanbul</div>
+      <div class="logo">Empire Travel</div>
       <nav>
         <a href="#">Локации</a>
         <a href="#">Тренды 2024</a>
         <a href="#">Связаться с нами</a>
       </nav>
       <div class="login-signup">
-        <a href="#" id="login-btn">Войти в личный кабинет</a>
-        <a href="#" id="signup-btn">Зарегистрироваться</a>
+        <a href="#" id="login-btn">Войти</a>
+        <a href="#" id="signup-btn">Регистрация</a>
       </div>
     </header>
 
-     <!-- Login Modal -->
-     <div id="login-modal" class="modal">
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
       <div class="modal-content">
-          <span class="close" id="close-login">&times;</span>
-          <h2>Войти в личный кабинет</h2>
-          <form id="login-form">
-              <label for="login-email">Имя пользователя или Email:</label>
-              <input type="email" id="login-email" name="email" required>
-              <label for="login-password">Пароль:</label>
-              <input type="password" id="login-password" name="password" required>
-              <div class="remember-me">
-                  <input type="checkbox" id="remember-me" name="remember-me">
-                  <label for="remember-me">Запомнить меня</label>
-              </div>
-              <div class="forgot-password">
-                  <a href="#" id="forgot-password-link">Забыли пароль?</a>
-              </div>
-              <button type="submit">Login</button>
-          </form>
-          <div class="create-account">
-              <p>Еще не зарегистрированы? <a href="#" id="create-account-link">Зарегистрироваться</a></p>
+        <span class="close" id="close-login">×</span>
+        <h2>Войти в личный кабинет</h2>
+        <form id="login-form">
+          <label for="login-email">Email:</label>
+          <input type="email" id="login-email" name="email" required />
+          <label for="login-password">Пароль:</label>
+          <input type="password" id="login-password" name="password" required />
+          <div class="remember-me">
+            <input type="checkbox" id="remember-me" name="remember-me" />
+            <label for="remember-me">Запомнить меня</label>
           </div>
+          <div class="forgot-password">
+            <a href="#">Забыли пароль?</a>
+          </div>
+          <button type="submit">Войти</button>
+        </form>
+        <div class="create-account">
+          <p>
+            Нет аккаунта?
+            <a href="#" id="create-account-link">Зарегистрироваться</a>
+          </p>
+        </div>
       </div>
-  </div>
+    </div>
 
-  <!-- Sign Up Modal -->
-  <div id="signup-modal" class="modal">
+    <!-- Sign Up Modal -->
+    <div id="signup-modal" class="modal">
       <div class="modal-content">
-          <span class="close" id="close-signup">&times;</span>
-          <h2>Зарегистрироваться</h2>
-          <form id="signup-form">
-              <label for="signup-email">Email:</label>
-              <input type="email" id="signup-email" name="email" required>
-              <label for="signup-password">Пароль:</label>
-              <input type="password" id="signup-password" name="password" required>
-              <button type="submit">Создать профиль</button>
-          </form>
+        <span class="close" id="close-signup">×</span>
+        <h2>Регистрация</h2>
+        <form id="signup-form">
+          <label for="signup-email">Email:</label>
+          <input type="email" id="signup-email" name="email" required />
+          <label for="signup-password">Пароль:</label>
+          <input
+            type="password"
+            id="signup-password"
+            name="password"
+            required
+          />
+          <button type="submit">Создать профиль</button>
+        </form>
       </div>
-  </div>
+    </div>
 
-
+    <!-- Ocean Container (Original) -->
     <section class="ocean-container">
       <div class="ocean-content">
-          <div class="ocean-title">
-              <h2>Откройте для себя Стамбул по-новому</h2>
-              <h1>Стамбул</h1>
-              <p id="ocean-carousel-text">Стамбул – это путешествие во времени, где каждый уголок скрывает свою собственную историю и магию.</p>
-              <div class="ocean-carousel-controls">
-                  <button class="ocean-carousel-btn" onclick="prevOceanText()">&#10094;</button>
-                  <button class="ocean-carousel-btn" onclick="nextOceanText()">&#10095;</button>
-              </div>
+        <div class="ocean-title">
+          <h2>Откройте для себя Стамбул по-новому</h2>
+          <h1>Стамбул</h1>
+          <p id="ocean-carousel-text">
+            Стамбул – это путешествие во времени, где каждый уголок скрывает
+            свою собственную историю и магию.
+          </p>
+          <div class="ocean-carousel-controls">
+            <button class="ocean-carousel-btn" onclick="prevOceanText()">
+              ❮
+            </button>
+            <button class="ocean-carousel-btn" onclick="nextOceanText()">
+              ❯
+            </button>
           </div>
+        </div>
       </div>
-
       <div class="weather-api">
-        <iframe src="https://api.wo-cloud.com/content/widget/?geoObjectKey=7356933&language=ru&region=UA&timeFormat=HH:mm&windUnit=mps&systemOfMeasurement=metric&temperatureUnit=celsius" name="CW2" scrolling="no" width="140" height="160" frameborder="0" style="border: 1px solid #10658E; border-radius: 15px;"></iframe>
-    </div>
-
+        <iframe
+          src="https://api.wo-cloud.com/content/widget/?geoObjectKey=7356933&language=ru&region=UA&timeFormat=HH:mm&windUnit=mps&systemOfMeasurement=metric&temperatureUnit=celsius"
+          name="CW2"
+          scrolling="no"
+          width="140"
+          height="160"
+          frameborder="0"
+          style="border: 1px solid #10658e; border-radius: 15px"
+        ></iframe>
+      </div>
       <div class="ocean-form">
         <div class="ocean-form-group">
-            <label for="ocean-location">Пол гида</label>
-            <select id="ocean-location">
-                <option value="">Выбрать</option>
-                <option value="beach">Женский</option>
-                <option value="mountain">Мужской</option>
-                <option value="mountain">Не имеет значения</option>
-            </select>
+          <label for="ocean-location">Пол гида</label>
+          <select id="ocean-location">
+            <option value="">Выбрать</option>
+            <option value="beach">Женский</option>
+            <option value="mountain">Мужской</option>
+            <option value="mountain">Не имеет значения</option>
+          </select>
         </div>
         <div class="ocean-form-group">
-            <label for="ocean-activity">Тип отдыха</label>
-            <select id="ocean-activity">
-                <option value="">Выбрать</option>
-                <option value="surfing">Культурный</option>
-                <option value="hiking">Развлекательный</option>
-                <option value="hiking">Ночной</option>
-                <option value="hiking">С детьми</option>
-            </select>
+          <label for="ocean-activity">Тип отдыха</label>
+          <select id="ocean-activity">
+            <option value="">Выбрать</option>
+            <option value="surfing">Культурный</option>
+            <option value="hiking">Развлекательный</option>
+            <option value="hiking">Ночной</option>
+            <option value="hiking">С детьми</option>
+          </select>
         </div>
         <div class="ocean-form-group">
-            <label for="ocean-transportation">Тип чего то</label>
-            <select id="ocean-transportation">
-                <option value="">Выбрать</option>
-                <option value="car">То</option>
-                <option value="bus">Это</option>
-            </select>
+          <label for="ocean-transportation">Тип чего то</label>
+          <select id="ocean-transportation">
+            <option value="">Выбрать</option>
+            <option value="car">То</option>
+            <option value="bus">Это</option>
+          </select>
         </div>
-        <button class="ocean-form-btn" onclick="search()">Подобрать гида</button>
-    </div>
-  </section>
-<!-- section trending 2024 start -->
-  <section class="trending2024">
-    <h2>Тренды 2024</h2>
-    <div class="card-container">
-      <div class="card">
-        <img src="./assets/img/kappadokia.jpg" class="card-image scale" alt="Каппадокия" />
-        <h3>Фототуры</h3>
-        <p>
-          <a href="..." class="card-link">Стамбул & Каппадокия - путешествие мечты.</a>
-        </p>
-        <p>Стоимость за туриста за 7 дней</p>
-        <p class="price">84 000 руб.</p>
+        <button class="ocean-form-btn" onclick="search()">
+          Подобрать гида
+        </button>
       </div>
-    <div class="card">
-      <img src="./assets/img/yact.jpeg" class="card-image scale" alt="Яхтинг" />
-      <h3>Туры выходного дня</h3>
-      <p>
-        <a href="..." class="card-link">Уикенд в Стамбуле. Яхта и заряд энергии.</a>
-      </p>
-      <p>Стоимость за туриста за 3 дня</p>
-      <p class="price">64 900 руб.</p>
-    </div>
+    </section>
 
-    <div class="card">
-      <img src="./assets/img/yoga3.jpg" class="card-image scale" alt="йога-туры" />
-      <h3>Фитнес и йога-туры</h3>
-      <p>
-        <a href="..." class="card-link">Энергетический Тур "Экология Души".</a>
-      </p>
-      <p>Стоимость за туриста за 5 дней</p>
-      <p class="price">70 000 руб.</p>
-    </div>
-  </div>
-  <div class="card-container">
-    <div class="card">
-      <img src="./assets/img/obzor.jpeg" class="card-image scale" alt="Обзорные туры" />
-      <h3>Обзорные туры</h3>
-      <p>
-        <a href="" class="card-link">Многогранность Стамбула - за 4 дня по максимуму.</a>
-      </p>
-      <p>Стоимость за туриста за 4 дня</p>
-      <p class="price">63 900 руб.</p>
-    </div>
-
-    <div class="card">
-    <img src="./assets/img/imige.jpeg" class="card-image scale" alt="Имидж туры" />
-    <h3>Имидж туры</h3>
-    <p>
-      <a href="" class="card-link">Стамбул: дизайнерский отель, чаепитие во дворце и старейший хаммам.</a>
-    </p>
-    <p>Стоимость за туриста за 4 дня</p>
-    <p class="price">110 873 руб.</p>
-    </div>
-
-    <div class="card">
-    <img src="./assets/img/avto.jpeg" class="card-image scale" alt="Автотуры" />
-    <h3>Автотуры</h3>
-    <p>
-      <a href="" class="card-link">Шопинг тур на машине в Стамбуле.</a>
-    </p>
-    <p>Стоимость за туриста за 1 день</p>
-    <p class="price">20 000 руб.</p>
-    </div>
-  </div>
-
-  </section>
-<!-- section trending 2024 end -->  
- 
-       
-
-    </div>
-
-  </section>
-  
-
-         <!-- Блок гиды -->
-      <section>
-          <div class="guide">
-            <h3>Наши профессиональные гиды</h3>
-            <p>Опытный гид действительно может сделать ваше путешествие более увлекательным и обогащающим.</p>
-            <p>Гиды, которые могут рассказать интересные факты о местах, их истории, культуре и традициях, способствуют более глубокому пониманию и вовлечению в путешествие.Путешествие с хорошим гидом может превратиться в незабываемый и познавательный опыт, открывающий новые горизонты и оставляющий яркие воспоминания.</p>
-            
-          </p>   
-          <div id="carousel" class="carousel">
-           <button class="arrow prev">⇦</button>
-           <div class="gallery">
-             <ul id="list">
-                <li>  <img src="./assets/img/Rectangle 43.png">               
-                   <!-- <div> Sara Jonson
-                  Languages: France, English, Italian
-                  Experience: 6 years
-                  Hi there, I'm Sara and I'll be your guide. Whether you're looking for information or need assistance, I'm here to help. Let me know what you're interested in or what you need, and I'll do my best to provide you with the best guidance possible. I hope you have a great experience and feel free to ask me any questions along the way.</div> -->
-                </li>
-               <li><img src="./assets/img/guide-2.png"></li>
-               <li><img src="./assets/img/guide-3.png"></li>
-               <li><img src="./assets/img/guide-5.jpg"></li>
-               <li><img src="./assets/img/guide-4.png"></li>
-               </ul>
-           </div>
-           <button class="arrow next">⇨</button>
-         </div>
-         </div>
-        </section>
-      
-        <section class="top-destinations">
-          <div class="destination-container">
-            <h2 class="destination-title">Топ направления</h2>
-            <p class="destination-description">
-              Подберем на любой вкус!
-            </p>
-            <div class="destination-images">
-              
-              <img class="destination-image destination-image_1" src="assets/img/01.jpg" alt="1" />
-              
-              <img class="destination-image destination-image_6" src="assets/img/06.jpg" alt="6" />
-              
-              <img class="destination-image destination-image_3" src="assets/img/03.jpg" alt="3" />
-              
-              <img class="destination-image destination-image_7" src="assets/img/07.jpg" alt="7" />
-              
-              <img class="destination-image destination-image_5" src="assets/img/05.jpg" alt="5" />
-              
-              <img class="destination-image destination-image_2" src="assets/img/02.jpg" alt="2" />
-              
-              <img class="destination-image destination-image_4" src="assets/img/04.jpg" alt="4" />
-              
-            </div>
-          </div>
-        </section>
-
-      </div>
-      <footer class="footer">
-        <div class="footer-section_1">
-          <div class="link footer__icon">
-            <h3 class="tittle_footer">Соцсети</h3>
-            <div class="footer_icon">
-              <a class="footer__icon_vk" href="#" target="_blank"><img src="./assets/img/vk_icon.svg" alt=""></a>
-              <a class="footer__icon_tg" href="#" target="_blank"><img src="./assets/img/telegram_icon.svg" alt=""></a>
-            </div>
-          </div>
+    <!-- Trending 2024 -->
+    <section class="trending2024">
+      <h2>Тренды 2024</h2>
+      <div class="card-container">
+        <div class="card">
+          <img
+            src="./assets/img/kappadokia.jpg"
+            class="card-image"
+            alt="Каппадокия"
+          />
+          <h3>Фототуры</h3>
+          <p>
+            <a href="#" class="card-link"
+              >Стамбул & Каппадокия - путешествие мечты</a
+            >
+          </p>
+          <p>За 7 дней</p>
+          <p class="price">84 000 руб.</p>
         </div>
+        <div class="card">
+          <img src="./assets/img/yact.jpeg" class="card-image" alt="Яхтинг" />
+          <h3>Туры выходного дня</h3>
+          <p><a href="#" class="card-link">Уикенд в Стамбуле</a></p>
+          <p>За 3 дня</p>
+          <p class="price">64 900 руб.</p>
+        </div>
+        <div class="card">
+          <img
+            src="./assets/img/yoga3.jpg"
+            class="card-image"
+            alt="Йога-туры"
+          />
+          <h3>Фитнес и йога</h3>
+          <p><a href="#" class="card-link">Энергетический тур</a></p>
+          <p>За 5 дней</p>
+          <p class="price">70 000 руб.</p>
+        </div>
+        <div class="card">
+          <img
+            src="./assets/img/obzor.jpeg"
+            class="card-image"
+            alt="Обзорные туры"
+          />
+          <h3>Обзорные туры</h3>
+          <p><a href="#" class="card-link">Многогранность Стамбула</a></p>
+          <p>За 4 дня</p>
+          <p class="price">63 900 руб.</p>
+        </div>
+        <div class="card">
+          <img
+            src="./assets/img/imige.jpeg"
+            class="card-image"
+            alt="Имидж туры"
+          />
+          <h3>Имидж туры</h3>
+          <p><a href="#" class="card-link">Дизайнерский Стамбул</a></p>
+          <p>За 4 дня</p>
+          <p class="price">110 873 руб.</p>
+        </div>
+        <div class="card">
+          <img src="./assets/img/avto.jpeg" class="card-image" alt="Автотуры" />
+          <h3>Автотуры</h3>
+          <p><a href="#" class="card-link">Шопинг тур</a></p>
+          <p>За 1 день</p>
+          <p class="price">20 000 руб.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guides -->
+    <section class="guide">
+      <h3>Наши гиды</h3>
+      <p>Опытные гиды сделают ваше путешествие незабываемым.</p>
+      <div class="guides-container">
+        <div class="guide-card">
+          <img src="./assets/img/Rectangle 43.png" alt="Sara Jonson" />
+          <h4>Sara Jonson</h4>
+          <p>Языки: Французский, Английский</p>
+          <p>Опыт: 6 лет</p>
+        </div>
+        <div class="guide-card">
+          <img src="./assets/img/guide-2.png" alt="Ali Demir" />
+          <h4>Ali Demir</h4>
+          <p>Языки: Турецкий, Русский</p>
+          <p>Опыт: 8 лет</p>
+        </div>
+        <div class="guide-card">
+          <img src="./assets/img/woman-from-turkey-smiling.png" alt="Maria Ivanova" />
+          <h4>Maria Ivanova</h4>
+          <p>Языки: Русский, Английский</p>
+          <p>Опыт: 5 лет</p>
+        </div>
+        <div class="guide-card">
+          <img src="./assets/img/young-woman-from-turkey-smiling.png" alt="Ahmet Yılmaz" />
+          <h4>Ahme Yılmaz</h4>
+          <p>Языки: Турецкий, Немецкий</p>
+          <p>Опыт: 7 лет</p>
+        </div>
+    </section>
+
+    <!-- Top Destinations -->
+    <section class="top-destinations">
+      <h2 class="destination-title">Топ направления</h2>
+      <p class="destination-description">Подберем на любой вкус!</p>
+      <div class="destination-images">
+        <img
+          class="destination-image"
+          src="assets/img/01.jpg"
+          alt="Destination 1"
+          data-title="Стамбул"
+        />
+        <img
+          class="destination-image"
+          src="assets/img/02.jpg"
+          alt="Destination 2"
+          data-title="Каппадокия"
+        />
+        <img
+          class="destination-image"
+          src="assets/img/03.jpg"
+          alt="Destination 3"
+          data-title="Анталья"
+        />
+        <img
+          class="destination-image"
+          src="assets/img/04.jpg"
+          alt="Destination 4"
+          data-title="Измир"
+        />
+        <img
+          class="destination-image"
+          src="assets/img/05.jpg"
+          alt="Destination 5"
+          data-title="Бодрум"
+        />
+        <img
+          class="destination-image"
+          src="assets/img/t-rkiye-flowers.png"
+          alt="Destination 6"
+          data-title="Бодрум"
+        />
+        <img
+          class="destination-image"
+          src="assets/img/t-rkiye-food.png"
+          alt="Destination 7"
+          data-title="Бодрум"
+        />
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-section_1">
+        <h3 class="tittle_footer">Соцсети</h3>
+        <div class="footer_icon">
+          <a href="#" target="_blank"
+            ><img src="./assets/img/vk_icon.svg" alt="VK"
+          /></a>
+          <a href="#" target="_blank"
+            ><img src="./assets/img/telegram_icon.svg" alt="Telegram"
+          /></a>
+        </div>
+      </div>
       <div class="footer-section_2">
         <h3 class="tittle_footer">Сервис</h3>
-        <a class="footer_link" href="#" target="_blank">О нас</a>
-        <a class="footer_link" href="#" target="_blank">FAQ</a>
-        <a class="footer_link" href="#" target="_blank">Cпособы оплаты</a>
+        <a class="footer_link" href="#">О нас</a>
+        <a class="footer_link" href="#">FAQ</a>
+        <a class="footer_link" href="#">Оплата</a>
       </div>
       <div class="footer-section_3">
         <h3 class="tittle_footer">Сотрудничество</h3>
-        <a class="footer_link" href="#" target="_blank">Гидам</a>
-        <a class="footer_link" href="#" target="_blank">Ресторанам</a>
-        <a class="footer_link" href="#" target="_blank">Мероприятия</a>
+        <a class="footer_link" href="#">Гидам</a>
+        <a class="footer_link" href="#">Ресторанам</a>
+        <a class="footer_link" href="#">Мероприятия</a>
       </div>
       <div class="footer-section_4">
-        <h3 class="tittle_footer">Свяжитесь с нами</h3>
-        <p class="text_footer">Email:<a class="footer_link" href="Email:info@empiretravel.com"> info@empiretravel.com</a></p>
-        <p class="text_footer">Phone:<a class="footer_link" href="tel:+123 456 7890"> +123 456 7890</a></p>
+        <h3 class="tittle_footer">Контакты</h3>
+        <p>
+          Email:
+          <a class="footer_link" href="mailto:info@empiretravel.com"
+            >info@empiretravel.com</a
+          >
+        </p>
+        <p>
+          Телефон:
+          <a class="footer_link" href="tel:+1234567890">+123 456 7890</a>
+        </p>
       </div>
     </footer>
 
