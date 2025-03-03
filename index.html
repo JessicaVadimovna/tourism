@@ -20,14 +20,17 @@
     <header>
       <div class="logo">Empire Travel</div>
       <nav>
-        <a href="#">Локации</a>
-        <a href="#">Тренды 2024</a>
-        <a href="#">Связаться с нами</a>
+        <ul class="nav-links">
+          <li><a href="#">Локации</a></li>
+          <li><a href="#">Тренды 2024</a></li>
+          <li><a href="#">Связаться с нами</a></li>
+        </ul>
       </nav>
       <div class="login-signup">
         <a href="#" id="login-btn">Войти</a>
         <a href="#" id="signup-btn">Регистрация</a>
       </div>
+      <button class="menu-toggle">☰</button>
     </header>
 
     <!-- Login Modal -->
@@ -84,17 +87,10 @@
         <div class="ocean-title">
           <h2>Откройте для себя Стамбул по-новому</h2>
           <h1>Стамбул</h1>
-          <p id="ocean-carousel-text">
-            Стамбул – это путешествие во времени, где каждый уголок скрывает
-            свою собственную историю и магию.
-          </p>
+          <p id="ocean-carousel-text">Стамбул – это путешествие во времени, где каждый уголок скрывает свою собственную историю и магию.</p>
           <div class="ocean-carousel-controls">
-            <button class="ocean-carousel-btn" onclick="prevOceanText()">
-              ❮
-            </button>
-            <button class="ocean-carousel-btn" onclick="nextOceanText()">
-              ❯
-            </button>
+            <button class="ocean-carousel-btn" onclick="prevOceanText()">❮</button>
+            <button class="ocean-carousel-btn" onclick="nextOceanText()">❯</button>
           </div>
         </div>
       </div>
@@ -130,16 +126,14 @@
           </select>
         </div>
         <div class="ocean-form-group">
-          <label for="ocean-transportation">Тип чего то</label>
+          <label for="ocean-transportation">Тип чего-то</label>
           <select id="ocean-transportation">
             <option value="">Выбрать</option>
             <option value="car">То</option>
             <option value="bus">Это</option>
           </select>
         </div>
-        <button class="ocean-form-btn" onclick="search()">
-          Подобрать гида
-        </button>
+        <button class="ocean-form-btn" onclick="search()">Подобрать гида</button>
       </div>
     </section>
 
@@ -148,66 +142,58 @@
       <h2>Тренды 2024</h2>
       <div class="card-container">
         <div class="card">
-          <img
-            src="./assets/img/kappadokia.jpg"
-            class="card-image"
-            alt="Каппадокия"
-          />
-          <h3>Фототуры</h3>
-          <p>
-            <a href="#" class="card-link"
-              >Стамбул & Каппадокия - путешествие мечты</a
-            >
-          </p>
-          <p>За 7 дней</p>
-          <p class="price">84 000 руб.</p>
+          <img src="./assets/img/kappadokia.jpg" class="card-image" alt="Каппадокия" />
+          <div class="card-content">
+            <h3>Фототуры</h3>
+            <p><a href="#" class="card-link">Стамбул & Каппадокия - путешествие мечты</a></p>
+            <p>Стоимость за туриста за 7 дней</p>
+            <span class="price">84 000 руб.</span>
+          </div>
         </div>
         <div class="card">
           <img src="./assets/img/yact.jpeg" class="card-image" alt="Яхтинг" />
-          <h3>Туры выходного дня</h3>
-          <p><a href="#" class="card-link">Уикенд в Стамбуле</a></p>
-          <p>За 3 дня</p>
-          <p class="price">64 900 руб.</p>
+          <div class="card-content">
+            <h3>Туры выходного дня</h3>
+            <p><a href="#" class="card-link">Уикенд в Стамбуле. Яхта и заряд энергии</a></p>
+            <p>Стоимость за туриста за 3 дня</p>
+            <span class="price">64 900 руб.</span>
+          </div>
         </div>
         <div class="card">
-          <img
-            src="./assets/img/yoga3.jpg"
-            class="card-image"
-            alt="Йога-туры"
-          />
-          <h3>Фитнес и йога</h3>
-          <p><a href="#" class="card-link">Энергетический тур</a></p>
-          <p>За 5 дней</p>
-          <p class="price">70 000 руб.</p>
+          <img src="./assets/img/yoga3.jpg" class="card-image" alt="Йога-туры" />
+          <div class="card-content">
+            <h3>Фитнес и йога-туры</h3>
+            <p><a href="#" class="card-link">Энергетический Тур "Экология Души"</a></p>
+            <p>Стоимость за туриста за 5 дней</p>
+            <span class="price">70 000 руб.</span>
+          </div>
         </div>
         <div class="card">
-          <img
-            src="./assets/img/obzor.jpeg"
-            class="card-image"
-            alt="Обзорные туры"
-          />
-          <h3>Обзорные туры</h3>
-          <p><a href="#" class="card-link">Многогранность Стамбула</a></p>
-          <p>За 4 дня</p>
-          <p class="price">63 900 руб.</p>
+          <img src="./assets/img/obzor.jpeg" class="card-image" alt="Обзорные туры" />
+          <div class="card-content">
+            <h3>Обзорные туры</h3>
+            <p><a href="#" class="card-link">Многогранность Стамбула - за 4 дня</a></p>
+            <p>Стоимость за туриста за 4 дня</p>
+            <span class="price">63 900 руб.</span>
+          </div>
         </div>
         <div class="card">
-          <img
-            src="./assets/img/imige.jpeg"
-            class="card-image"
-            alt="Имидж туры"
-          />
-          <h3>Имидж туры</h3>
-          <p><a href="#" class="card-link">Дизайнерский Стамбул</a></p>
-          <p>За 4 дня</p>
-          <p class="price">110 873 руб.</p>
+          <img src="./assets/img/imige.jpeg" class="card-image" alt="Имидж туры" />
+          <div class="card-content">
+            <h3>Имидж туры</h3>
+            <p><a href="#" class="card-link">Стамбул: дизайнерский отель и хаммам</a></p>
+            <p>Стоимость за туриста за 4 дня</p>
+            <span class="price">110 873 руб.</span>
+          </div>
         </div>
         <div class="card">
           <img src="./assets/img/avto.jpeg" class="card-image" alt="Автотуры" />
-          <h3>Автотуры</h3>
-          <p><a href="#" class="card-link">Шопинг тур</a></p>
-          <p>За 1 день</p>
-          <p class="price">20 000 руб.</p>
+          <div class="card-content">
+            <h3>Автотуры</h3>
+            <p><a href="#" class="card-link">Шопинг тур на машине в Стамбуле</a></p>
+            <p>Стоимость за туриста за 1 день</p>
+            <span class="price">20 000 руб.</span>
+          </div>
         </div>
       </div>
     </section>

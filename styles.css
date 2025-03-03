@@ -12,19 +12,36 @@ body {
 
 /* Header */
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
-  background: #fff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+header.scrolled {
+  background: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 700;
   background: linear-gradient(90deg, #4A90E2, #FF6F61);
+  -webkit-background-clip: text;
   color: transparent;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
 }
 
 nav {
@@ -32,16 +49,41 @@ nav {
   align-items: center;
 }
 
-nav a {
-  margin: 0 20px;
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin: 0 25px;
+}
+
+.nav-links a {
   text-decoration: none;
   color: #333;
-  font-weight: 400;
+  font-weight: 500;
+  font-size: 1.1em;
+  position: relative;
   transition: color 0.3s ease;
 }
 
-nav a:hover {
-  color: #4A90E2;
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #FF6F61;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: #FF6F61;
 }
 
 .login-signup {
@@ -50,15 +92,16 @@ nav a:hover {
 }
 
 .login-signup a {
-  padding: 10px 20px;
+  padding: 10px 25px;
   border-radius: 25px;
   text-decoration: none;
-  font-weight: 400;
+  font-weight: 500;
+  font-size: 1em;
   transition: all 0.3s ease;
 }
 
 #login-btn {
-  background: none;
+  background: transparent;
   border: 2px solid #4A90E2;
   color: #4A90E2;
 }
@@ -66,15 +109,32 @@ nav a:hover {
 #login-btn:hover {
   background: #4A90E2;
   color: #fff;
+  transform: translateY(-2px);
 }
 
 #signup-btn {
-  background: #4A90E2;
+  background: #FF6F61;
   color: #fff;
+  border: none;
 }
 
 #signup-btn:hover {
-  background: #357ABD;
+  background: #E65B4F;
+  transform: translateY(-2px);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.menu-toggle:hover {
+  color: #FF6F61;
 }
 
 /* Modal */
@@ -154,94 +214,140 @@ nav a:hover {
 }
 
 /* секция выпадающие списки начало */
-
 .ocean-container {
-  background: url('./assets/img/sea-istanbul.jpg');
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url('./assets/img/sea-istanbul.jpg') no-repeat center/cover;
   position: relative;
   width: 100%;
-  padding: 20px;
   max-width: 1800px;
+  margin: 80px auto 60px;
+  padding: 40px;
   color: white;
   border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  margin: auto;
 }
 
 .ocean-content {
-  float: left;
-}
-
-.weather-api {
-  float: right;
+  max-width: 60%;
 }
 
 .ocean-title h2 {
   font-weight: 300;
+  font-size: 1.5em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #FF6F61;
 }
 
 .ocean-title h1 {
-  font-size: 3em;
+  font-size: 3.5em;
   margin: 0.2em 0;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .ocean-title p {
-  font-size: 1.2em;
+  font-size: 1.3em;
   margin: 1em 0;
+  font-weight: 300;
+  line-height: 1.5;
 }
 
 .ocean-carousel-controls {
   display: flex;
-  margin-bottom: 10px;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .ocean-carousel-btn {
-  background: none;
-  border: 1px solid white;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   color: white;
-  padding: 5px 10px;
-  margin: 0 5px;
+  padding: 8px 15px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 10px;
+  font-size: 1.2em;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .ocean-carousel-btn:hover {
-  background: rgba(255, 255, 255, 0.425);
+  background: rgba(255, 111, 97, 0.8);
+  transform: scale(1.1);
+}
+
+.weather-api {
+  position: absolute;
+  top: 40px;
+  right: 40px;
 }
 
 .ocean-form {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  padding: 25px;
+  max-width: 600px;
+  margin-top: 30px;
   display: flex;
-  flex-direction: row;
-  float: left;
-  flex-wrap: nowrap;
-  justify-content: center;
-  margin-left: 28%;
-  margin-top: 10%;
-  background-color: #68686856; /* Прозрачный белый фон */
-  border: 1px solid #ffffff; /* Белая рамка */
-  border-radius: 10px; /* Округлые углы */
-  padding: 20px; /* Внутренний отступ */
+  flex-wrap: wrap;
+  gap: 20px;
+  backdrop-filter: blur(5px);
 }
 
 .ocean-form-group {
   flex: 1;
   min-width: 200px;
-  margin: 10px;
 }
 
 .ocean-form-group label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  font-weight: 400;
+  color: #fff;
 }
 
 .ocean-form-group select,
 .ocean-form-group input {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   color: white;
-  background-color: #6868683f; /* Прозрачный белый фон */
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 1em;
+  transition: background 0.3s ease;
 }
+
+.ocean-form-group select:hover,
+.ocean-form-group input:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.ocean-form select {
+  appearance: none;
+  background-image: url('./assets/img/iconmonstr-location-1\ 1.png');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 30px;
+}
+
+.ocean-form-btn {
+  color: white;
+  background: #FF6F61;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 25px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.ocean-form-btn:hover {
+  background: #E65B4F;
+  transform: translateY(-2px);
+}
+
 
 /* Стиль для элементов select */
 .ocean-form select {
@@ -276,70 +382,108 @@ nav a:hover {
 /* /* секция выпадающие списки конец */
 
 /* Trending 2024 */
+
 .trending2024 {
-  max-width: 1200px;
-  margin: 40px auto;
+  max-width: 1400px;
+  margin: 60px auto;
   text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(74, 144, 226, 0.05), rgba(255, 111, 97, 0.05));
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .trending2024 h2 {
-  font-size: 2.5em;
+  font-size: 2.8em;
   font-weight: 700;
-  margin-bottom: 30px;
+  color: #2C3E50;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.trending2024 h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #FF6F61;
+  border-radius: 2px;
 }
 
 .card-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  padding: 0;
-  background: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
 }
 
 .card {
   background: #fff;
   border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  width: 300px;
   overflow: hidden;
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
 }
 
 .card:hover {
   transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .card-image {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-image {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 20px;
+  text-align: left;
 }
 
 .card h3 {
-  font-size: 1.5em;
-  margin: 15px 0;
+  font-size: 1.6em;
+  font-weight: 700;
+  color: #2C3E50;
+  margin-bottom: 10px;
 }
 
 .card p {
-  font-size: 0.9em;
+  font-size: 1em;
   color: #666;
+  margin-bottom: 10px;
+  font-weight: 300;
 }
 
 .card-link {
   color: #4A90E2;
   text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .card-link:hover {
+  color: #FF6F61;
   text-decoration: underline;
 }
 
 .price {
-  font-size: 1.2em;
-  color: #FF6F61;
+  font-size: 1.3em;
   font-weight: 700;
-  margin: 10px 0;
+  color: #FF6F61;
+  margin-top: 10px;
+  display: block;
 }
 
 /* Guides */
@@ -720,5 +864,53 @@ nav a:hover {
   footer {
     grid-template-columns: 1fr;
     padding: 30px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ocean-container {
+    margin: 70px auto 40px;
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .ocean-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .ocean-title h2 {
+    font-size: 1.2em;
+  }
+
+  .ocean-title h1 {
+    font-size: 2.5em;
+  }
+
+  .ocean-title p {
+    font-size: 1.1em;
+  }
+
+  .weather-api {
+    position: static;
+    margin: 20px auto;
+    display: block;
+    text-align: center;
+  }
+
+  .ocean-form {
+    flex-direction: column;
+    max-width: 100%;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .ocean-form-group {
+    min-width: 100%;
+  }
+
+  .ocean-form-btn {
+    width: 100%;
+    margin-top: 10px;
   }
 }
